@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.galaxyGasLabel = new System.Windows.Forms.Label();
@@ -48,7 +49,12 @@
             this.tenderedInput = new System.Windows.Forms.TextBox();
             this.payButton = new System.Windows.Forms.Button();
             this.changeLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.changeOutput = new System.Windows.Forms.TextBox();
+            this.receiptBackground = new System.Windows.Forms.Label();
+            this.receiptLabel = new System.Windows.Forms.Label();
+            this.receiptButton = new System.Windows.Forms.Button();
+            this.receiptOutput = new System.Windows.Forms.Label();
+            this.orderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -185,6 +191,7 @@
             this.calculateButton.TabIndex = 15;
             this.calculateButton.Text = "Calculate Price";
             this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // tenderedLabel
             // 
@@ -211,6 +218,7 @@
             this.payButton.TabIndex = 18;
             this.payButton.Text = "Pay";
             this.payButton.UseVisualStyleBackColor = true;
+            this.payButton.Click += new System.EventHandler(this.payButton_Click);
             // 
             // changeLabel
             // 
@@ -222,19 +230,71 @@
             this.changeLabel.TabIndex = 19;
             this.changeLabel.Text = "Change";
             // 
-            // textBox1
+            // changeOutput
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 425);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
+            this.changeOutput.Location = new System.Drawing.Point(101, 425);
+            this.changeOutput.Name = "changeOutput";
+            this.changeOutput.Size = new System.Drawing.Size(100, 20);
+            this.changeOutput.TabIndex = 20;
+            // 
+            // receiptBackground
+            // 
+            this.receiptBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.receiptBackground.Location = new System.Drawing.Point(366, 79);
+            this.receiptBackground.Name = "receiptBackground";
+            this.receiptBackground.Size = new System.Drawing.Size(299, 346);
+            this.receiptBackground.TabIndex = 21;
+            // 
+            // receiptLabel
+            // 
+            this.receiptLabel.AutoSize = true;
+            this.receiptLabel.Font = new System.Drawing.Font("Courier New", 14F);
+            this.receiptLabel.Location = new System.Drawing.Point(438, 17);
+            this.receiptLabel.Name = "receiptLabel";
+            this.receiptLabel.Size = new System.Drawing.Size(142, 21);
+            this.receiptLabel.TabIndex = 22;
+            this.receiptLabel.Text = "Your Receipt";
+            // 
+            // receiptButton
+            // 
+            this.receiptButton.Location = new System.Drawing.Point(462, 41);
+            this.receiptButton.Name = "receiptButton";
+            this.receiptButton.Size = new System.Drawing.Size(96, 35);
+            this.receiptButton.TabIndex = 23;
+            this.receiptButton.Text = "Print";
+            this.receiptButton.UseVisualStyleBackColor = true;
+            this.receiptButton.Click += new System.EventHandler(this.receiptButton_Click);
+            // 
+            // receiptOutput
+            // 
+            this.receiptOutput.AutoSize = true;
+            this.receiptOutput.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptOutput.Location = new System.Drawing.Point(382, 100);
+            this.receiptOutput.Name = "receiptOutput";
+            this.receiptOutput.Size = new System.Drawing.Size(0, 15);
+            this.receiptOutput.TabIndex = 24;
+            // 
+            // orderButton
+            // 
+            this.orderButton.Location = new System.Drawing.Point(483, 431);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(75, 23);
+            this.orderButton.TabIndex = 25;
+            this.orderButton.Text = "New Order";
+            this.orderButton.UseVisualStyleBackColor = true;
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 464);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.orderButton);
+            this.Controls.Add(this.receiptOutput);
+            this.Controls.Add(this.receiptButton);
+            this.Controls.Add(this.receiptLabel);
+            this.Controls.Add(this.receiptBackground);
+            this.Controls.Add(this.changeOutput);
             this.Controls.Add(this.changeLabel);
             this.Controls.Add(this.payButton);
             this.Controls.Add(this.tenderedInput);
@@ -255,6 +315,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "T Man\'s Galaxy Gas";
             this.ResumeLayout(false);
@@ -284,7 +345,12 @@
         private System.Windows.Forms.TextBox tenderedInput;
         private System.Windows.Forms.Button payButton;
         private System.Windows.Forms.Label changeLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox changeOutput;
+        private System.Windows.Forms.Label receiptBackground;
+        private System.Windows.Forms.Label receiptLabel;
+        private System.Windows.Forms.Button receiptButton;
+        private System.Windows.Forms.Label receiptOutput;
+        private System.Windows.Forms.Button orderButton;
     }
 }
 
