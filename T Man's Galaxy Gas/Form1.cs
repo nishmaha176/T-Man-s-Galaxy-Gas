@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace T_Man_s_Galaxy_Gas
 {
@@ -76,6 +77,8 @@ namespace T_Man_s_Galaxy_Gas
 
         private void receiptButton_Click(object sender, EventArgs e)
         {
+            SoundPlayer sp = new SoundPlayer(Properties.Resources.Cash_Register__Kaching____Sound_Effect__HD___online_audio_converter_com_);
+            sp.Play();
             receiptOutput.Text = $"Your Receipt";
             Refresh();
             Thread.Sleep(1000);
@@ -102,14 +105,11 @@ namespace T_Man_s_Galaxy_Gas
             Thread.Sleep(1000);
             receiptOutput.Text += $"\nchange                    {change.ToString("C")}";
 
-
-
-
-
         }
 
         private void orderButton_Click(object sender, EventArgs e)
         {
+           //reset variables and text outputs
             galaxyGasInput.Text = $"";
             maskInput.Text = $"";
             dispenserInput.Text = $"";
@@ -119,9 +119,14 @@ namespace T_Man_s_Galaxy_Gas
             changeOutput.Text = "";
             tenderedInput.Text = $"";
             receiptOutput.Text = $"";
-
-
-
+            galaxyGas = 0;
+            mask = 0;
+            dispenser = 0;
+            change = 0;
+            tendered = 0;
+            subtotal = 0;
+            taxAmount = 0;
+            total = 0;
 
         }
     }
