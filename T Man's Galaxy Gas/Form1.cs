@@ -27,7 +27,6 @@ namespace T_Man_s_Galaxy_Gas
         double tendered;
         double change;
 
-
         public Form1()
         {
             InitializeComponent();
@@ -55,9 +54,6 @@ namespace T_Man_s_Galaxy_Gas
                 //to display errors when a letter is input instead of numbers
             }
 
-
-
-
         }
 
         private void payButton_Click(object sender, EventArgs e)
@@ -73,7 +69,6 @@ namespace T_Man_s_Galaxy_Gas
                 changeOutput.Text = "ERROR";
             }
         }
-
 
         private void receiptButton_Click(object sender, EventArgs e)
         {
